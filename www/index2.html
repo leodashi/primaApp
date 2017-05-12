@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>MKS Films</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="statusbar-overlay"></div>
+     <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+         <!--Left panel content-->
+        <div class="content-block">
+            <p>Cerca il film</p>
+            <form class="searchbar" action="search.html">
+                <div class="searchbar-input">
+                    <input type="search" placeholder="Search">
+                    <a href="#" class="searchbar-clear"></a>
+                </div>
+                <a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+    <!-- Search Bar overlay-->
+    <div class="searchbar-overlay"></div>
+    
+    <!-- Page content -->
+    <div class="page-content">
+        <div class="content-block searchbar-not-found">
+            <p>Niente che corrisponda alla tua ricerca</p>
+        </div>
+ 
+        <div class="list-block list-block-search searchbar-found">
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+    
+    <!-- right panel with reveal effect-->
+    <div class="panel panel-right panel-reveal">
+        <div class="content-block">
+            <!--Right panel content-->
+            <p>Ordina </p>
+        <ul>
+            <li><a href="#ord">A-Z</a></li>
+            <li><a href="#contr">Z-A</a></li>
+            <li><a href="#date">Data di rilascio</a></li>
+          
+        </ul>
+            <p>Scegli categoria</p>
+            <ul>
+                <li><a href="#avv">Avventura</a></li>
+                <li><a href="#az">Azione</a></li>
+                <li><a href="#bio">Biografico</a></li>
+                <li><a href="#com">Comico</a></li>
+                <li><a href="#comm">Commedia</a></li>
+                <li><a href="#dram">Dramamtico</a></li>
+                <li><a href="#fan">Fantascienza</a></li>
+                <li><a href="#fantasy">Fantasy</a></li>
+                <li><a href="#gia">Giallo</a></li>
+                <li><a href="#hor">Horror</a></li>
+                <li><a href="#mus">Musical</a></li>
+                <li><a href="#pol">Poliziesco</a></li>
+                <li><a href="#sent">Sentimentale</a></li>
+                <li><a href="#thri">Thriller</a></li>
+                <li><a href="#west">Western</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Speed Dial Wrap -->
+          <!-- FAB inside will open Speed Dial actions -->
+                <a href="#" id='bo' class="floating-button floating-button-to-popover open-popover color-red" >
+                <i id="camb" class="icon icon-plus" ></i>
+                </a>
+        <!-- End of Speed Dial -->
+            <!-- Top Navbar-->
+            <div class="navbar theme-red">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    
+                    <div class="left">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel" data-panel="left"><i class="icon icon-bars"> </i></a>
+                    </div>
+                    <div class="center">MKS Films</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon icon-form-tel"></i></a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index2" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block"> 
+                            <!-- Link to another page -->
+                            <br>
+                            <h2>I più recenti</h2>
+                            
+                            <!-- Blocco di immagini -->
+                            <div id="container">
+                                <ul id="griglia">
+                                </ul>
+                                </div>
+                            <!-- Fine blocco di immagini -->
+                           
+                            <br><a>Pagina</a>
+                             <a class="btn-paginator"  pag="1" href="#primo">1</a>
+                             <a class="btn-paginator"  pag="2" href="#secondo">2</a>
+                             <a class="btn-paginator"  pag="3" href="#terzo">3</a>
+                             <a class="btn-paginator"  pag="4" href="#quarto">4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+<!-- Speed Dial Actions -->
+<div class="popover demo-popover " style='top: 510px' id="aggNuovo">
+            <div class="popover-inner">
+              <div class="list-block">
+                  <ul>
+                  <li>
+                     <a href="AggFilm.html" id="ba" class="item-content item-link">
+                      <div class="item-inner">
+                          <div class="item-title">Aggiungi un film </div>
+                      </div>
+                     </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
+    </body>
+</html>
